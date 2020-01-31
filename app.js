@@ -1,21 +1,28 @@
-const geocode = require('./utils/geocode')
-const forecast = require('./utils/forecast')
+// const { exec } = require('child_process');
+// exec('ls', (err, stdout, stderr) => {
+//   if (err) {
+//     //some err occurred
+//     console.error(err)
+//   } else {
+//    // the *entire* stdout and stderr (buffered)
+//    console.log(`stdout: ${stdout}`);
+//    console.log(`stderr: ${stderr}`);
+//   }
+// });
 
-const address=process.argv[2]
-if(address){
+// const execSync = require('child_process').execSync;
+// // import { execSync } from 'child_process';  // replace ^ if using ES modules
+// const output = execSync('ls', { encoding: 'utf-8' });  // the default is 'buffer'
+// console.log('Output was:\n', output);
 
-    geocode(address,(error,data)=>{
-        if(error){
-            return console.log(error)
-        }
-        data && forecast(data.latitude,data.longitude,data.location,(error,data)=>{
-            if(error){
-                return console.log(error)
-            }
-            console.log(data)
-        })
-    })
-    
-}else{
-    console.log('Please Enter Address')
-}
+// var shell = WScript.CreateObject("WScript.Shell");
+// shell.Run("ls");
+
+var process = require('child_process');
+process.exec('dir',function (err,stdout,stderr) {
+    if (err) {
+        console.log("\n"+stderr);
+    } else {
+        console.log(stdout);
+    }
+});

@@ -1,5 +1,5 @@
 {
-  "name": "weather-app",
+  "name": "running-cmd",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-latest": "^6.24.1",
     "request": "^2.88.0"
   }
 }
